@@ -10,7 +10,7 @@
 
 <body>
     <?php include './inc/navBar.php'; ?>
- 
+    <div></div>
     <div class="container-fluid p-0">
         <div class="row no-gutters position-relative">
             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white p-5 position-absolute h-100" style="background-color: rgba(0,0,0,0.5);">
