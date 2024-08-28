@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CvJobcrafters</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .sidebar {
+            background-color: #f0f0f0;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+        .sidebar h2 {
+            margin-top: 0;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #337ab7;
+        }
+        .sidebar nav a:hover {
+            background-color: #f5f5f5;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+        }
+        .section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="https://via.placeholder.com/100" alt="Profile Picture">
+        <h2>Amanda Cerrano</h2>
+        <nav>
+            <a href="#" data-section="home">Home</a>
+            <a href="#" data-section="about">Acerca de mi</a>
+            <a href="#" data-section="resume">Resume</a>
+            <a href="#" data-section="portfolio">Portfolio</a>
+            <a href="#" data-section="contact">Contacto</a>
+        </nav>
+    </div>
+    <div class="content">
+        <div id="home" class="section home-section active">
+            <h2>Home</h2>
+            <p>Bienvenido a mi perfil!</p>
+            <p>Gracias por tomarte el tiempo de conocerme </p>
+        </div>
+        <div id="about" class="section about-section">
+            <h2>Acerca de mi</h2>
+            <div class="content">
+                <section id="about-me">
+                    <h4>Carpintera</h4>
+                    <p>Amo la creacion de todo desde cero</p>
+                    <p>Soy carpintera con experiencia en la construcción y reparación de estructuras de madera, muebles y acabados interiores.</p>
+                    <p>Me especializo en la fabricación de muebles personalizados, reparación de estructuras de madera, instalación de suelos y techos de madera, y trabajos de acabado detallado. Mi trabajo destaca por su atención al detalle, precisión y calidad duradera.</p>
+                    <ul class="contact-info">
+                        <li><strong>Edad:</strong> 29</li>
+                        <li><strong>Residencia:</strong> Salvadoreña</li>
+                        <li><strong>Direccion:</strong> Apopa, Colonia Vista Bella, Calle principal 5</li>
+                        <li><strong>Email:</strong> <a href="mailto:email@example.com">AmaCerra@yahoo.com</a></li>
+                        <li><strong>Telefono:</strong> +503 2478 9507</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="resume" class="section resume-section">
+            <h2>Resume</h2>
+            <div class="row">
+                <div class="col-md-6 education-section">
+                    <h3>Educacion</h3>
+                    <div>
+                        <h4>2009</h4>
+                        <h5>Specialization Course</h5>
+                        <p>University of Studies</p>
+                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
+                    </div>
+                    <div>
+                        <h4>2010</h4>
+                        <h5>Specialization Course</h5>
+                        <p>University of Studies</p>
+                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 experience">
+                    <h3>Experience</h3>
+                    <div>
+                        <h4>Dec 2012 - Current</h4>
+                        <h5>Frontend Developer</h5>
+                        <p>Web Agency</p>
+                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
+                    </div>
+                    <div>
+                        <h4>Dec 2011 - Nov 2012</h4>
+                        <h5>Web Designer</h5>
+                        <p>Web Agency</p>
+                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
+                    </div>
+                </div>
+            </div>
+                <div class="row skills-section">
+                    <div class="col-md-6">
+                        <h3>Design Skills</h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Web Design</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Graphic Design</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">Print Design</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Coding Skills</h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">HTML5</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">CSS3</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">jQuery</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div id="portfolio" class="section portfolio-section">
+            <h2>Portfolio</h2>
+            <p>My Best Works</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/150" alt="Portfolio Image 1" class="img-fluid">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/150" alt="Portfolio Image 2" class="img-fluid">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/150" alt="Portfolio Image 3" class="img-fluid">
+                </div>
+            </div>
+     </div>
+        <div id="contact" class="section contact-section">
+            <h2>Contact</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Edit Contact Info</h4>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" value="Alex Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" value="alexsmith@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" value="+123 654 7890">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" value="Los Angeles, USA">
+                        </div>
+                        <div class="form-group">
+                            <label for="freelance">Freelance Availability</label>
+                            <input type="text" class="form-control" id="freelance" value="Available">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h4>Send a Message</h4>
+                    <form>
+                        <div class="form-group">
+                            <label for="message">Message for Me</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/CV.js"></script>
+    <script>
+        document.querySelectorAll('.sidebar nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(this.getAttribute('data-section')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

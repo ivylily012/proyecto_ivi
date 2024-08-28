@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Estilos generales para el navbar */
+        .navbar {
+            background-color: #ffffff; /* Fondo blanco por defecto */
+            transition: top 0.3s ease-in-out; /* Suaviza la animación del navbar */
+        }
+
+        .navbar-hidden {
+            top: -80px; /* Ajusta esta altura dependiendo de la altura de tu navbar */
+        }
+
+        .navbar .nav-link, .navbar .navbar-brand, .navbar .btn-outline-dark, .dropdown-menu, .dropdown-item {
+            color: #000; /* Texto oscuro por defecto */
+        }
+
+        .btn-primary {
+            background-color: #7e57c2; /* Color morado para el botón de Registrarse */
+            border-color: #7e57c2;
+        }
+
+        .btn-primary:hover {
+            background-color: #6a4c93; /* Morado más oscuro en hover */
+            border-color: #6a4c93;
+        }
+
+        .dropdown-menu {
+            min-width: 250px;
+            border-radius: 10px;
+            background-color: #ffffff; /* Fondo blanco por defecto */
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f0f0; /* Fondo gris claro en hover */
+            color: #000;
+        }
+
+        .form-check-input {
+            display: none; /* Oculta el checkbox predeterminado */
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #6a4c93; /* Color morado para el switch en modo oscuro */
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px); /* Ajusta según el tamaño del slider */
+        }
+
+        /* Estilos para el modo oscuro */
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        .dark-mode .navbar {
+            background-color: #1e1e1e; /* Fondo oscuro para el navbar */
+        }
+
+        .dark-mode .navbar .nav-link, .dark-mode .navbar .navbar-brand, .dark-mode .navbar .btn-outline-dark, .dark-mode .dropdown-menu, .dark-mode .dropdown-item {
+            color: #ffffff; /* Texto claro en modo oscuro */
+        }
+
+        .dark-mode .dropdown-menu {
+            background-color: #1e1e1e; /* Fondo oscuro para el menú */
+        }
+
+        .dark-mode .dropdown-item:hover {
+            background-color: #444444; /* Fondo más oscuro en hover */
+            color: #ffffff;
+        }
+
+        .dark-mode .bg-light {
+            background-color: #1e1e1e!important; /* Fondo oscuro para la sección */
+            color: #ffffff; /* Texto blanco en modo oscuro */
+        }
+
+        .dropdown-divider {
+            border-color: #000; /* Color del separador en modo claro */
+        }
+
+        .dark-mode .dropdown-divider {
+            border-color: #ffffff; /* Color del separador en modo oscuro */
+        }
+
+        .skiptranslate iframe { 
+            opacity: 0 !important;
+        }
+
+        img[src="https://www.google.com/images/cleardot.gif"] {
+            display: none;
+        }
+
+        body {
+            top: 0 !important; /* el coso del traductor */
+        }
+
+        /* Estilos para centrar y ajustar el buscador */
+        #search-input {
+            max-width: 300px;
+            margin: auto;
+        }
+
+        /* Evitar desbordamiento en el navbar */
+        .navbar-collapse {
+            flex-wrap: wrap;
+        }
+
+        .navbar-nav .nav-item {
+            min-width: 100px; /* Ajusta este valor según sea necesario */
+        }
+
+        /* Evitar desbordamiento en botones */
+        .navbar .btn-outline-dark {
+            white-space: nowrap; /* Evita que el texto se desborde */
+        }
+
+        /* Espaciado consistente entre botones */
+        .navbar .btn, .navbar .dropdown-toggle {
+            margin: 0 5px;
+        }
+
+        /* Control de traducción */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+        body {
+    background-color: #e4c3f6;
+}
+
+.resume {
+    max-width: 800px;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #c04af3;
+    display: flex;
+    flex-wrap: wrap; /* Allows the sections to wrap on smaller screens */
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 20px;
+    border-right: 1px solid #d1d1d1;
+    text-align: center;
+    margin-bottom: 20px; /* Adds space when stacked on smaller screens */
+}
+
+.right-section {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.text-muted {
+    color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume {
+        flex-direction: column; /* Stacks sections on smaller screens */
+    }
+
+    .left-section, .right-section {
+        padding: 0;
+        border-right: none; /* Removes the border on smaller screens */
+    }
+
+    .right-section {
+        padding-top: 20px; /* Adds space between sections when stacked */
+    }
+
+    .profile-img {
+        width: 120px; /* Slightly reduce image size on smaller screens */
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+}
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let lastScrollTop = 0;
+            const navbar = document.querySelector('.navbar');
+
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Si el usuario hace scroll hacia abajo, escondemos el navbar
+                    navbar.classList.add('navbar-hidden');
+                } else {
+                    // Si el usuario hace scroll hacia arriba, mostramos el navbar
+                    navbar.classList.remove('navbar-hidden');
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos en iOS
+            });
+
+            document.getElementById('darkModeToggle').addEventListener('change', function () {
+                if (this.checked) {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+
+            // Cargar el estado del modo oscuro desde localStorage al cargar la página
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('darkModeToggle').checked = true;
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.getElementById('darkModeToggle').checked = false;
+            }
+
+            // Retraso en la inicialización del traductor para asegurar que todo esté cargado
+            setTimeout(() => {
+                googleTranslateElementInit();
+            }, 1500); // Ajusta el tiempo si es necesario
+        });
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en,de',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../HTML/Index.html">Jobcrafters</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../HTML/Index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../HTML/directorio de oficios.html">Directorio de Oficios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../HTML/sobreNosotros.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../HTML/contactanos.html">Contáctanos</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <!-- Search form -->
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" id="search-input">
+                        <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                    </form>
+                    <a class="btn btn-outline-dark me-2" type="button" href="../HTML/forRegis.html">Iniciar sesión</a>
+                    <a class="btn btn-primary" type="button" href="../HTML/forRegis.html">Registrarse</a>
+                    
+                    <!-- User icon dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                            <li class="dropdown-item">
+                                <div class="dropdown d-flex align-items-center">
+                                    <i class="bi bi-globe me-2"></i>
+                                    <a href="#" class="dropdown-toggle" id="idiomaDropdown"></a>
+                                    <div id="google_translate_element"></div>
+                                    <ul class="dropdown-menu" aria-labelledby="idiomaDropdown">
+                                        <li><a class="dropdown-item idioma" href="#" data-lang="en">Inglés</a></li>
+                                        <li><a class="dropdown-item idioma" href="#" data-lang="de">Alemán</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                    <span><i class="bi bi-moon-fill me-2"></i> Fondo oscuro</span>
+                                    <label class="switch">
+                                        <input type="checkbox" id="darkModeToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="resume my-5">
+    <div class="left-section">
+        <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-img">
+        <h1>Angelina Morgan</h1>
+        <p class="text-muted">Web Developer & Graphic Designer</p>
+        <p><strong>Nacimiento:</strong> 15/08/1990</p>
+        <p><strong>Edad:</strong> 33 años</p>
+        <p><strong>Género:</strong> Femenino</p>
+        <p><strong>Nacionalidad:</strong> Estadounidense</p>
+        <p><strong>Teléfono:</strong> +123-456-789</p>
+        <p><strong>Email:</strong> yourname@domain.com</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/username</p>
+
+        <h3>Idiomas</h3>
+        <ul>
+            <li>Inglés (Proficiente)</li>
+            <li>Español (Intermedio)</li>
+            <li>Francés (Básico)</li>
+        </ul>
+    </div>
+    <div class="right-section">
+        <h2>Perfil Profesional</h2>
+        <p>Soy una desarrolladora web y diseñadora gráfica con más de 10 años de experiencia en la creación de sitios web y materiales gráficos para clientes de diferentes sectores. Mi enfoque se centra en la usabilidad, la estética y la funcionalidad, garantizando una experiencia de usuario excepcional.</p>
+
+        <h2>Formación Académica</h2>
+        <p><strong>Licenciatura en Informática</strong> - Universidad ABC (2008 - 2012)</p>
+        <p><strong>Diplomado en Diseño Gráfico</strong> - Instituto XYZ (2012 - 2013)</p>
+
+        <h2>Experiencia</h2>
+        <h3>Desarrolladora Web</h3>
+        <p>Empresa Tech (2015 - Presente)</p>
+        <ul>
+            <li>Desarrollo de sitios web responsivos utilizando HTML, CSS, y JavaScript.</li>
+            <li>Colaboración con equipos de diseño para mejorar la experiencia de usuario.</li>
+            <li>Mantenimiento y actualización de plataformas web existentes.</li>
+        </ul>
+
+        <h3>Diseñadora Gráfica</h3>
+        <p>Agencia Creativa (2013 - 2015)</p>
+        <ul>
+            <li>Diseño de materiales gráficos como logotipos, folletos y presentaciones.</li>
+            <li>Trabajé en proyectos de identidad visual para clientes de diferentes industrias.</li>
+        </ul>
+
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Desarrollo Web: HTML, CSS, JavaScript, Bootstrap</li>
+            <li>Diseño Gráfico: Adobe Photoshop, Illustrator</li>
+            <li>Gestión de Proyectos: Agile, Scrum</li>
+            <li>SEO y Marketing Digital</li>
+        </ul>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reportModal">Reportar perfil</button>
+    </div>
+    <!-- Modal para reportar -->
+    <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportModalLabel">Reportar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Qué quieres reportar?</p>
+                    <p class="text-muted">No le avisaremos a la cuenta quién la reportó. Si alguien se encuentra en peligro inminente, llama a los servicios de emergencia locales. No esperes.</p>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-action" onclick="handleReportOption('Una servicio que realizo')">Un servicio que realizo</li>
+                        <li class="list-group-item list-group-item-action" onclick="handleReportOption('Mensajes recientes que te enviaron')">Mensajes recientes que te enviaron</li>
+                        <li class="list-group-item list-group-item-action" onclick="handleReportOption('Algo sobre esta cuenta')">Algo sobre esta cuenta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <!-- CONOCE MÁS Section -->
+            <div class="col-md-3 col-sm-6 mb-3">
+                <h5>CONOCE MÁS</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../HTML/Index.html" class="text-white text-decoration-none">Inicio</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Búsqueda de Empleos</a></li>
+                    <li><a href="../HTML/directorio de oficios.html" class="text-white text-decoration-none">Directorio de oficios</a></li>
+                    <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                    <li><a href="../HTML/contactanos.html" class="text-white text-decoration-none">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <!-- Sobre Empleos Section -->
+            <div class="col-md-3 col-sm-6 mb-3">
+                <h5>Sobre Empleos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../HTML/directorio de oficios.html" class="text-white text-decoration-none">Directorio de oficios</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Búsqueda de Empleos</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Regístrate</a></li>
+                </ul>
+            </div>
+
+            <!-- Políticas Section -->
+            <div class="col-md-3 col-sm-6 mb-3">
+                <h5>Políticas</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Nuestra Misión</a></li>
+                    <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Nuestra Historia</a></li>
+                    <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Cómo funciona</a></li>
+                    <li><a href="../HTML/contactanos.html" class="text-white text-decoration-none">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <!-- Jobcrafters Section -->
+            <div class="col-md-3 col-sm-6 mb-3 text-center text-md-start">
+                <h5>Jobcrafters</h5>
+                <img src="../IMG/favicon.png" alt="Logo" class="img-fluid mb-2" style="max-width: 150px;">
+                <div>
+                    <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <p class="mb-0">&copy; 2024 Jobcrafters.com Todos los Derechos Reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../JS/modo noche.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en,de',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+  <div id="google_translate_element" style="display:none;"></div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.dropdown-item.idioma').forEach(item => {
+        item.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          const googleFrame = document.querySelector('.goog-te-combo');
+          if (googleFrame) {
+            googleFrame.value = lang;
+            googleFrame.dispatchEvent(new Event('change'));
+          }
+        });
+      });
+    });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Agregar eventos de clic a las opciones de reporte
+            const reportOptions = document.querySelectorAll('.report-option');
+            reportOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    const reportType = this.getAttribute('data-report');
+                    console.log('Reporte seleccionado:', reportType);
+
+                    // Enviar el tipo de reporte al servidor (simulado aquí)
+                    enviarReporte(reportType);
+                });
+            });
+        });
+
+        function enviarReporte(reportType) {
+            // Aquí va el código para enviar los datos a la base de datos
+            // Esto es una simulación de una llamada AJAX
+            console.log(`Enviando reporte de tipo: ${reportType} a la base de datos...`);
+
+            // Simulación de una llamada AJAX (usando fetch)
+            fetch('/reportar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ reportType: reportType })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Reporte enviado correctamente.');
+                    alert('Tu reporte ha sido enviado.');
+                } else {
+                    console.error('Error al enviar el reporte.');
+                    alert('Hubo un problema al enviar tu reporte. Intenta de nuevo más tarde.');
+                }
+            })
+            .catch(error => {
+                console.error('Error de red:', error);
+                alert('Hubo un problema de red. Intenta de nuevo más tarde.');
+            });
+
+            // Cerrar el modal después de enviar el reporte
+            const reportModal = new bootstrap.Modal(document.getElementById('reportModal'));
+            reportModal.hide();
+        }
+    </script>
+    <!-- Incluye jQuery (necesario para Bootstrap JS) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Incluye el archivo JS de Bootstrap -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

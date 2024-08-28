@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobcrafters</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+   /* Estilos generales para el navbar */
+   .navbar {
+            background-color: #ffffff; /* Fondo blanco por defecto */
+            transition: top 0.3s ease-in-out; /* Suaviza la animación del navbar */
+        }
+
+        .navbar-hidden {
+            top: -80px; /* Ajusta esta altura dependiendo de la altura de tu navbar */
+        }
+
+        .navbar .nav-link, .navbar .navbar-brand, .navbar .btn-outline-dark, .dropdown-menu, .dropdown-item {
+            color: #000; /* Texto oscuro por defecto */
+        }
+
+        .btn-primary {
+            background-color: #7e57c2; /* Color morado para el botón de Registrarse */
+            border-color: #7e57c2;
+        }
+
+        .btn-primary:hover {
+            background-color: #6a4c93; /* Morado más oscuro en hover */
+            border-color: #6a4c93;
+        }
+
+        .dropdown-menu {
+            min-width: 250px;
+            border-radius: 10px;
+            background-color: #ffffff; /* Fondo blanco por defecto */
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f0f0; /* Fondo gris claro en hover */
+            color: #000;
+        }
+
+        .form-check-input {
+            display: none; /* Oculta el checkbox predeterminado */
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #6a4c93; /* Color morado para el switch en modo oscuro */
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px); /* Ajusta según el tamaño del slider */
+        }
+
+        /* Estilos para el modo oscuro */
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        .dark-mode .navbar {
+            background-color: #1e1e1e; /* Fondo oscuro para el navbar */
+        }
+
+        .dark-mode .navbar .nav-link, .dark-mode .navbar .navbar-brand, .dark-mode .navbar .btn-outline-dark, .dark-mode .dropdown-menu, .dark-mode .dropdown-item {
+            color: #ffffff; /* Texto claro en modo oscuro */
+        }
+
+        .dark-mode .dropdown-menu {
+            background-color: #1e1e1e; /* Fondo oscuro para el menú */
+        }
+
+        .dark-mode .dropdown-item:hover {
+            background-color: #444444; /* Fondo más oscuro en hover */
+            color: #ffffff;
+        }
+
+        .dark-mode .bg-light {
+            background-color: #1e1e1e!important; /* Fondo oscuro para la sección */
+            color: #ffffff; /* Texto blanco en modo oscuro */
+        }
+
+        .dropdown-divider {
+            border-color: #000; /* Color del separador en modo claro */
+        }
+
+        .dark-mode .dropdown-divider {
+            border-color: #ffffff; /* Color del separador en modo oscuro */
+        }
+
+        .skiptranslate iframe { 
+            opacity: 0 !important;
+        }
+
+        img[src="https://www.google.com/images/cleardot.gif"] {
+            display: none;
+        }
+
+        body {
+            top: 0 !important; /* el coso del traductor */
+        }
+
+        /* Estilos para centrar y ajustar el buscador */
+        #search-input {
+            max-width: 300px;
+            margin: auto;
+        }
+
+        /* Evitar desbordamiento en el navbar */
+        .navbar-collapse {
+            flex-wrap: wrap;
+        }
+
+        .navbar-nav .nav-item {
+            min-width: 100px; /* Ajusta este valor según sea necesario */
+        }
+
+        /* Evitar desbordamiento en botones */
+        .navbar .btn-outline-dark {
+            white-space: nowrap; /* Evita que el texto se desborde */
+        }
+
+        /* Espaciado consistente entre botones */
+        .navbar .btn, .navbar .dropdown-toggle {
+            margin: 0 5px;
+        }
+
+        /* Control de traducción */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top navbar-main">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-column flex-md-row" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="../HTML/Index.html">Jobcrafters</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="">Solicitudes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="">Acciones de pago</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Formulario de búsqueda -->
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" id="search-input">
+                            <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                        </form>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a class="btn btn-primary" type="button" href="../HTML/Registro.html">Stevan</a>
+                </div>
+                <!-- Dropdown del ícono de usuario -->
+                <div class="dropdown">
+                    <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">
+                            <div class="dropdown d-flex align-items-center">
+                                <i class="bi bi-globe me-2"></i>
+                                <a href="#" class="dropdown-toggle" id="idiomaDropdown"></a>  
+                                <div id="google_translate_element"></div>
+                                <ul class="dropdown-menu" aria-labelledby="idiomaDropdown">
+                                    <li><a class="dropdown-item idioma" href="#" data-lang="en">Inglés</a></li>
+                                    <li><a class="dropdown-item idioma" href="#" data-lang="de">Alemán</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                <span><i class="bi bi-moon-fill me-2"></i> Fondo oscuro</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="darkModeToggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <center><h3>Solicitudes de servicios </h3></center><!-- lleva imagen aqui -->
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/14.png" class="card-img-top" alt="Alan">
+                    <div class="card-body">
+                        <h5 class="card-title">Steven Miranda</h5>
+                        <p class="card-text">Mecanico</p>
+                        <p class="card-text">Soy un mecánico con más de 5 años de experiencia en el diagnóstico, mantenimiento y reparación de vehículos de motor, tanto ligeros como pesados. </p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/15.png" class="card-img-top" alt="Amanda">
+                    <div class="card-body">
+                        <h5 class="card-title">Eduardo Amaya</h5>
+                        <p class="card-text">Fontanero</p>
+                        <p class="card-text">Soy fontanero con más de 2 años de experiencia en la instalación, mantenimiento y reparación de sistemas de fontanería residencial y comercial. </p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/16.png" class="card-img-top" alt="Marcos">
+                    <div class="card-body">
+                        <h5 class="card-title">Martin cruz</h5>
+                        <p class="card-text">Albañil</p>
+                        <p class="card-text">Soy albañil con una experiencia de 2 años en la construcción y remodelación de estructuras residenciales, comerciales que mi experiencia abarca.</p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/17.png" class="card-img-top" alt="Carlos">
+                    <div class="card-body">
+                        <h5 class="card-title">Ashley Cerrano</h5>
+                        <p class="card-text">Jardinera</p>
+                        <p class="card-text">Soy Jardinera profesional con más de 10 años de experiencia en el diseño, mantenimiento y paisajismo de jardines residenciales y comerciales, mi especialidad incluye muchas cosas. </p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <center><h3>Solicitudes de empleo</h3></center>    <!-- lleva imagen aqui -->
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/5.png" class="card-img-top" alt="Alan">
+                    <div class="card-body">
+                        <h5 class="card-title">Alan Mendez</h5>
+                        <p class="card-text">Asistente de Ventas de Soluciones Informáticas</p>
+                        <p class="card-text">Tengo experiencia en ventas y estoy interesado/a en unirme a su equipo para promover y vender soluciones informáticas a clientes empresariales.  </p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/6.png" class="card-img-top" alt="Amanda">
+                    <div class="card-body">
+                        <h5 class="card-title">Amanda Cerrano</h5>
+                        <p class="card-text">Tester de Juegos y Aplicaciones</p>
+                        <p class="card-text">Como aficionada a los videojuegos y las aplicaciones, estoy interesada en probar y dar retroalimentación sobre juegos y aplicaciones desarrolladas por su empresa. </p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/7.png" class="card-img-top" alt="Marcos">
+                    <div class="card-body">
+                        <h5 class="card-title">Marcos Medina</h5>
+                        <p class="card-text">Content Creator Tecnológico</p>
+                        <p class="card-text">Soy un creador de contenido apasionado por la tecnología y estoy interesado/a en colaborar con su empresa para desarrollar contenido multimedia creativo. </p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="../IMG/8.png" class="card-img-top" alt="Carlos">
+                    <div class="card-body">
+                        <h5 class="card-title">Carlos Munjia</h5>
+                        <p class="card-text">Tester de Software Beta</p>
+                        <p class="card-text">Soy un entusiasta de la tecnología interesado en colaborar como tester de software beta para su empresa, tengo experiencia en probar versiones preliminares de software.</p>
+                        <a href="#" class="btn btn-primary">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- Footer Section -->
+<footer class="bg-dark text-white py-4">
+  <div class="container">
+      <div class="row">
+          <!-- Primera columna -->
+          <div class="col-12 col-md-3 mb-3">
+              <h5>CONOCE MÁS</h5>
+              <ul class="list-unstyled">
+                  <li><a href="../HTML/Index.html" class="text-white text-decoration-none">Inicio</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Búsqueda de Empleos</a></li>
+                  <li><a href="../HTML/directorio de oficios.html" class="text-white text-decoration-none">Directorio de oficios</a></li>
+                  <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                  <li><a href="../HTML/contactanos.html" class="text-white text-decoration-none">Contáctanos</a></li>
+              </ul>
+          </div>
+          <!-- Segunda columna -->
+          <div class="col-12 col-md-3 mb-3">
+              <h5>Sobre Empleos</h5>
+              <ul class="list-unstyled">
+                  <li><a href="../HTML/directorio de oficios.html" class="text-white text-decoration-none">Directorio de oficios</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Búsqueda de Empleos</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Regístrate</a></li>
+              </ul>
+          </div>
+          <!-- Tercera columna -->
+          <div class="col-12 col-md-3 mb-3">
+              <h5>Políticas</h5>
+              <ul class="list-unstyled">
+                  <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Nuestra Misión</a></li>
+                  <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Nuestra Historia</a></li>
+                  <li><a href="../HTML/sobreNosotros.html" class="text-white text-decoration-none">Cómo funciona</a></li>
+                  <li><a href="../HTML/contactanos.html" class="text-white text-decoration-none">Contáctanos</a></li>
+              </ul>
+          </div>
+          <!-- Cuarta columna -->
+          <div class="col-12 col-md-3 mb-3 text-center text-md-start">
+              <h5>Jobcrafters</h5>
+              <img src="../IMG/favicon.png" alt="Logo" class="img-fluid mb-2" style="max-width: 150px;">
+              <div>
+                  <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" class="text-white me-2"><i class="bi bi-youtube"></i></a>
+                  <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="row mt-4">
+          <div class="col text-center">
+              <p class="mb-0">&copy; 2024 Jobcrafters.com Todos los Derechos Reservados</p>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+<script src="../JS/modo noche.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/66ba5633146b7af4a4397fc9/1i53u1f03';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
+  </script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+      let lastScrollTop = 0;
+      const navbar = document.querySelector('.navbar');
+
+      window.addEventListener('scroll', function () {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+          if (scrollTop > lastScrollTop) {
+              // Si el usuario hace scroll hacia abajo, escondemos el navbar
+              navbar.classList.add('navbar-hidden');
+          } else {
+              // Si el usuario hace scroll hacia arriba, mostramos el navbar
+              navbar.classList.remove('navbar-hidden');
+          }
+
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos en iOS
+      });
+
+      document.getElementById('darkModeToggle').addEventListener('change', function () {
+          if (this.checked) {
+              document.body.classList.add('dark-mode');
+              localStorage.setItem('darkMode', 'enabled');
+          } else {
+              document.body.classList.remove('dark-mode');
+              localStorage.setItem('darkMode', 'disabled');
+          }
+      });
+
+      // Cargar el estado del modo oscuro desde localStorage al cargar la página
+      if (localStorage.getItem('darkMode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          document.getElementById('darkModeToggle').checked = true;
+      } else {
+          document.body.classList.remove('dark-mode');
+          document.getElementById('darkModeToggle').checked = false;
+      }
+
+      document.querySelectorAll('.dropdown-item.idioma').forEach(item => {
+          item.addEventListener('click', function() {
+              const lang = this.getAttribute('data-lang');
+              localStorage.setItem('selectedLanguage', lang); // Guarda el idioma seleccionado
+              const googleFrame = document.querySelector('.goog-te-combo');
+              if (googleFrame) {
+                  googleFrame.value = lang;
+                  googleFrame.dispatchEvent(new Event('change'));
+              }
+          });
+      });
+
+      // Aplicar el idioma guardado al cargar la página
+      const savedLang = localStorage.getItem('selectedLanguage');
+      if (savedLang) {
+          setTimeout(() => {
+              const googleFrame = document.querySelector('.goog-te-combo');
+              if (googleFrame) {
+                  googleFrame.value = savedLang;
+                  googleFrame.dispatchEvent(new Event('change'));
+              }
+          }, 1500); // Ajusta el tiempo si es necesario
+      }
+
+      // Restablecer idioma al español
+      document.getElementById('resetLanguage').addEventListener('click', function() {
+          localStorage.removeItem('selectedLanguage'); // Elimina el idioma guardado
+          setTimeout(() => {
+              const googleFrame = document.querySelector('.goog-te-combo');
+              if (googleFrame) {
+                  googleFrame.value = 'es'; // Establece el idioma a español
+                  googleFrame.dispatchEvent(new Event('change'));
+              }
+          }, 1500); // Ajusta el tiempo si es necesario
+          location.reload(); // Recarga la página para aplicar cambios
+      });
+
+      // Retraso en la inicialización del traductor para asegurar que todo esté cargado
+      setTimeout(() => {
+          googleTranslateElementInit();
+      }, 1500); // Ajusta el tiempo si es necesario
+  });
+
+  function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+          pageLanguage: 'es',
+          includedLanguages: 'es,en,de',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div id="google_translate_element" style="display:none;"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.dropdown-item.idioma').forEach(item => {
+          item.addEventListener('click', function() {
+              const lang = this.getAttribute('data-lang');
+              localStorage.setItem('selectedLanguage', lang); // Guarda el idioma seleccionado
+              const googleFrame = document.querySelector('.goog-te-combo');
+              if (googleFrame) {
+                  googleFrame.value = lang;
+                  googleFrame.dispatchEvent(new Event('change'));
+              }
+          });
+      });
+
+      // Aplicar el idioma guardado al cargar la página
+      const savedLang = localStorage.getItem('selectedLanguage');
+      if (savedLang) {
+          setTimeout(() => {
+              const googleFrame = document.querySelector('.goog-te-combo');
+              if (googleFrame) {
+                  googleFrame.value = savedLang;
+                  googleFrame.dispatchEvent(new Event('change'));
+              }
+          }, 0); // Ajusta el tiempo si es necesario
+      }
+  });
+</script>
+</body>
+</html>
+    

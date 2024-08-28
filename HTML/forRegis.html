@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../CSS/stylesInicio.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿Cómo te deseas registrar?</h1>
+        <div class="options">
+            <div class="option">
+                <?php 
+                    $rol_cliente = "cliente";
+                    $url_cliente = "regisClien.html?rol=".urlencode($rol_cliente);
+                ?>
+                <a href="../HTML/<?php echo $url_cliente; ?>" onclick="setRol('cliente')"><img src="../IMG/cliente.png" alt="Cliente"></a>
+                <p>Cliente</p>
+            </div>
+            <div class="option">
+               <a href="../HTML/regisProfesio.html?rol=profesionista""?rol=profesionista" onclick="setRol('profesionista')"> <img src="../IMG/regis2.jpg" alt="Profecionista"></a>
+                <p>Profesionista</p>
+            </div>
+            <div class="option">
+                <a href="../HTML/regisEmpre.html?"><img src="../IMG/EMPRE.jpg" alt="Empresa"></a>
+                <p>Empresa</p>
+            </div>
+            <div class="option">
+                <a href="../HTML/regisAdmin.html?""?rol=admin"><img src="../IMG/6.png" alt="Empresa"></a>
+                <p>Admin</p>
+            </div>
+        </div>
+        <div class="footer">
+            ¿Ya tienes una cuenta? <a href="../HTML/inicioSesion.html">Inicia sesión aquí</a>
+        </div>
+    </div>
+    <script>
+        function setRol(rol) {
+          sessionStorage.setItem('rol', rol);
+        }
+      </script>
+</body>
+</html>

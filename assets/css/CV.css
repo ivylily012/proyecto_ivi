@@ -1,0 +1,55 @@
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+.sidebar {
+    background-color: #9575cd;
+    color: #fff;
+    padding: 20px;
+    width: 250px;
+}
+.sidebar img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sidebar nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+.sidebar nav a:hover {
+    background-color: #7e57c2;
+}
+.content {
+    flex:0;
+    padding: 20px;
+}
+.contact-section h2, .about-section h2, .resume-section h2, .portfolio-section h2, .home-section h2 {
+    margin-bottom: 20px;
+    color: #673ab7;
+}
+.contact-section .btn, .about-section .btn, .resume-section .btn, .portfolio-section .btn, .home-section .btn {
+    background-color: #673ab7;
+    color: #fff;
+    border: none;
+}
+.contact-section .btn:hover, .about-section .btn:hover, .resume-section .btn:hover, .portfolio-section .btn:hover, .home-section .btn:hover {
+    background-color: #5e35b1;
+}
+.section {
+    display: none;
+}
+.section.active {
+    display: block;
+}

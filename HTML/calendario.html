@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Trabajo</title>
+    <link rel="stylesheet" href="../CSS/calen.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prevMonth" class="nav-button">←</button>
+            <h2 id="monthYear"></h2>
+            <button id="nextMonth" class="nav-button">→</button>
+        </div>
+        <div class="calendar-weekdays">
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mié</div>
+            <div>Jue</div>
+            <div>Vie</div>
+            <div>Sáb</div>
+            <div>Dom</div>
+        </div>
+        <div class="calendar-days" id="days"></div>
+    </div>
+
+    <div class="modal" id="eventModal">
+        <form id="eventForm">
+            <input type="hidden" id="eventDate">
+            <label for="eventTitle">Título:</label>
+            <input type="text" id="eventTitle" required>
+            <label for="eventDescription">Descripción:</label>
+            <textarea id="eventDescription"></textarea>
+            <label for="eventType">Tipo de Evento:</label>
+            <select id="eventType">
+                <option value="interview">Entrevista</option>
+                <option value="note">Nota</option>
+                <option value="meeting">Reunión</option>
+                <option value="project">Proyecto</option>
+            </select>
+            <button type="submit">Guardar Evento</button>
+        </form>
+    </div>
+
+    <script src="../JS/calen.js"></script>
+</body>
+</html>

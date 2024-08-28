@@ -1,0 +1,118 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f3f7;
+}
+
+.calendar-container {
+    width: 380px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c9a1db;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border-bottom: 2px solid #b58ac2;
+}
+
+.nav-button {
+    background-color: #b58ac2;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+}
+
+.nav-button:hover {
+    background-color: #a276b6;
+}
+
+.calendar-weekdays, .calendar-days {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+.calendar-weekdays div, .calendar-days div {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px 0;
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.calendar-days div {
+    background-color: #ece4f1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-days div:hover {
+    background-color: #d7c1e1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 300px;
+}
+
+.modal.active {
+    display: block;
+}
+
+#eventForm label {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+}
+
+#eventForm input, #eventForm textarea, #eventForm select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f7f3f7;
+}
+
+#eventForm button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #c9a1db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#eventForm button:hover {
+    background-color: #b58ac2;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edición del Perfil</title>
+    <style> 
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-picture-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.upload-label:hover {
+    background-color: #0056b3;
+}
+
+.profile-info,
+.social-links {
+    width: 100%;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.info-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.info-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.social-links h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Estilo para el botón de enviar */
+.submit-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #7713b5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #7713b5;
+}
+
+    </style> 
+</head>
+<body>
+    <!-- Contenedor del Perfil -->
+    <section id="profile">
+        <div class="profile-container">
+            <h1>Edición del perfil</h1>
+            <div class="profile-card">
+                <div class="profile-picture-container">
+                    <input type="file" id="profile-picture" accept="image/*">
+                </div>
+                
+                <div class="profile-info">
+                    <div class="info-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" placeholder="Ingresa tu nombre">
+                    </div>
+
+                    <div class="info-group">
+                        <label for="username">Nombre de usuario</label>
+                        <input type="text" id="username" placeholder="Ingresa tu nombre de usuario">
+                    </div>
+
+                    <div class="info-group">
+                        <label for="pronouns">Pronombres</label>
+                        <input type="text" id="pronouns" placeholder="Añadir pronombres">
+                    </div>
+
+                    <div class="info-group">
+                        <label for="bio">Descripción corta</label>
+                        <input type="text" id="bio" placeholder="Añadir una descripción corta">
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h2>Redes sociales</h2>
+                    <div class="info-group">
+                        <label for="instagram">Instagram</label>
+                        <input type="text" id="instagram" placeholder="Añadir Instagram">
+                    </div>
+
+                    <div class="info-group">
+                        <label for="youtube">YouTube</label>
+                        <input type="text" id="youtube" placeholder="Añadir YouTube">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de Enviar -->
+            <div class="submit-container">
+                <button type="submit" class="submit-button">Enviar</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

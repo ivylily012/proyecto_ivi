@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de sesion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="../Imagenes/logo-mini.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cssyanci.css">
+</head>
+<body class="BoddyDos">
+    <div class="form-wrapper">
+        <main class="form-side">
+            <form class="my-form">
+                <div class="form-welcome-row">  
+                    <h1>BIENVENIDO A JOBCRAFTER</h1>
+                    <h2>REGISTRATE</h2>
+                </div>
+
+
+                <div class="text-field">
+                    <label for="email">Nombre</label>
+                    <input type="email" id="email" name="email" autocomplete="off" placeholder="Introduce tu nombre" required>
+                </div>
+
+                <div class="text-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="off" placeholder="Introduce tu correo" required>
+                </div>
+                
+                <div class="text-field">
+                    <label for="password">Contraseña</label>
+                    <input id="password" type="password" name="password" placeholder="Introduce tu contraseña" title="Mínimo 6 caracteres, al menos 1 alfabeto y 1 número"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required>
+                    <div class="error-message">Mínimo 6 caracteres, al menos 1 alfabeto y 1 número</div>
+                </div>
+
+                <div class="text-field">
+                    <label for="password">Confirma Contraseña</label>
+                    <input id="password" type="password" name="password" placeholder="Verifica tu contraseña" title="Mínimo 6 caracteres, al menos 1 alfabeto y 1 número"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required>
+                    <div class="error-message">Mínimo 6 caracteres, al menos 1 alfabeto y 1 número</div>
+                </div>
+
+                <a href="../HTML/inicio">
+                    <button class="my-form__button" type="button">
+                      Registrar
+                    </button>
+                  </a>
+                <div class="my-form__actions">
+                    <div class="my-form__row_Cuenta">
+                        <span>¿No tiene cuenta?</span>
+                        <a href="../HTML/registro1.HTML" title="Reset Password">
+                            Regístrese ahora
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <aside class="info-side"></aside>
+    </div>
+    
+</body>
+</html>
